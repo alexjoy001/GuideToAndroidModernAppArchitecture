@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.guidemodernapparchitecture">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".GuideModernAppArchitectureApplication"
         android:allowBackup="true"
@@ -14,6 +17,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GuideModernAppArchitecture"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.sciencenews.ScienceNewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.businessnews.BusinessNewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.topheadlines.TopHeadlinesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.searchanynews.SearchAnyNewsActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
