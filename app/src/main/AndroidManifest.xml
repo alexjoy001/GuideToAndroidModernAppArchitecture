@@ -18,10 +18,10 @@
         android:theme="@style/Theme.GuideModernAppArchitecture"
         tools:targetApi="31">
         <activity
-            android:name=".ui.sciencenews.ScienceNewsActivity"
+            android:name=".ui.newsdetail.NewsDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.businessnews.BusinessNewsActivity"
+            android:name=".ui.categorynews.CategoryNewsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.topheadlines.TopHeadlinesActivity"
@@ -30,9 +30,8 @@
             android:name=".ui.searchanynews.SearchAnyNewsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.home.HomeActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.GuideModernAppArchitecture">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

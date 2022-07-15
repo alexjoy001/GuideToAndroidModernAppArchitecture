@@ -1,11 +1,10 @@
 package com.example.guidemodernapparchitecture.network
 
-import com.example.guidemodernapparchitecture.models.BaseResponse
-import com.example.guidemodernapparchitecture.models.apiresponsemodels.NewsApiResponse
+import com.example.guidemodernapparchitecture.data.models.BaseResponse
+import com.example.guidemodernapparchitecture.data.models.apiresponsemodels.NewsApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
-import java.util.*
 
 interface ApiService {
 
@@ -23,16 +22,9 @@ interface ApiService {
     ): BaseResponse<List<NewsApiResponse>>
 
     @GET(EndPoints.TOP_HEADLINES)
-    suspend fun businessNews(
-        @Query("category") sortBy: String = "business",
-        @Query("apiKey") apiKey: String = EndPoints.API_KEY
-    ): Response<BaseResponse<List<NewsApiResponse>>>
-
-    @GET(EndPoints.TOP_HEADLINES)
-    suspend fun scienceNews(
-        @Query("category") sortBy: String = "science",
+    suspend fun getCategoryNews(
+        @Query("category") sortBy: String,
         @Query("apiKey") apiKey: String = EndPoints.API_KEY
     ): BaseResponse<List<NewsApiResponse>>
-
 
 }

@@ -1,25 +1,21 @@
 package com.example.guidemodernapparchitecture.ui.searchanynews
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.bumptech.glide.Glide
-import com.example.guidemodernapparchitecture.common.DisplayNewsItem
-import com.example.guidemodernapparchitecture.models.apiresponsemodels.NewsApiResponse
-import com.skydoves.landscapist.glide.GlideImage
+import com.example.guidemodernapparchitecture.ui.common.DisplayNewsItem
+import com.example.guidemodernapparchitecture.ui.newsdetail.NewsDetailActivity
+import com.example.guidemodernapparchitecture.util.Constants
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,7 +26,7 @@ class SearchAnyNewsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Column() {
+            Column {
                 AppBar()
                 HomePageContent()
             }
@@ -41,7 +37,7 @@ class SearchAnyNewsActivity : ComponentActivity() {
     @Preview
     @Composable
     fun DefaultPreview() {
-        Column() {
+        Column {
             AppBar()
             HomePageContent()
         }
@@ -88,7 +84,11 @@ class SearchAnyNewsActivity : ComponentActivity() {
                 verticalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 items(newsList.size) { index ->
-                    DisplayNewsItem(newsList[index])
+                    DisplayNewsItem(newsList[index], onClick = {
+                        val intent = Intent(this@SearchAnyNewsActivity, NewsDetailActivity::class.java)
+                        intent.putExtra(Constants.NEWS, newsList[index])
+                        startActivity(intent)
+                    })
                 }
             }
         }

@@ -1,4 +1,4 @@
-package com.example.guidemodernapparchitecture.models
+package com.example.guidemodernapparchitecture.data.models
 
 import com.google.gson.annotations.SerializedName
 

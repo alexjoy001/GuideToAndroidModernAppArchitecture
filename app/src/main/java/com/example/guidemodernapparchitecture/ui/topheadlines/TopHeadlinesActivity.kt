@@ -1,6 +1,8 @@
 package com.example.guidemodernapparchitecture.ui.topheadlines
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -18,7 +20,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.guidemodernapparchitecture.common.DisplayNewsItem
+import com.example.guidemodernapparchitecture.ui.common.DisplayNewsItem
+import com.example.guidemodernapparchitecture.ui.newsdetail.NewsDetailActivity
+import com.example.guidemodernapparchitecture.util.Constants
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -40,7 +44,7 @@ class TopHeadlinesActivity : ComponentActivity() {
     @Preview(showBackground = true)
     @Composable
     fun DefaultPreview() {
-        Column() {
+        Column {
             AppBar()
             DisplayNews()
         }
@@ -67,7 +71,11 @@ class TopHeadlinesActivity : ComponentActivity() {
                 verticalArrangement = Arrangement.spacedBy(10.dp)
             ) {
                 items(newsList.size) { index ->
-                    DisplayNewsItem(newsList[index])
+                    DisplayNewsItem(newsList[index], onClick = {
+                        val intent = Intent(this@TopHeadlinesActivity, NewsDetailActivity::class.java)
+                        intent.putExtra(Constants.NEWS, newsList[index])
+                        startActivity(intent)
+                    })
                 }
             }
         }

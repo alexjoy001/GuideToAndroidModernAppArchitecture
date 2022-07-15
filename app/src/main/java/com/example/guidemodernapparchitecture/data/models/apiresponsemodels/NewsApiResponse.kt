@@ -1,11 +1,10 @@
-package com.example.guidemodernapparchitecture.models.apiresponsemodels
+package com.example.guidemodernapparchitecture.data.models.apiresponsemodels
 
-import com.example.guidemodernapparchitecture.models.NewsSource
 import com.google.gson.annotations.SerializedName
 
 data class NewsApiResponse(
     @SerializedName("source")
-    var source: NewsSource?,
+    var source: NewsSourceApiResponse?,
     @SerializedName("author")
     var author: String?,
     @SerializedName("title")
