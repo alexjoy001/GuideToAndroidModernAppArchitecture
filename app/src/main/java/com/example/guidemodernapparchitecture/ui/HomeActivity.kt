@@ -1,4 +1,4 @@
-package com.example.guidemodernapparchitecture
+package com.example.guidemodernapparchitecture.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
