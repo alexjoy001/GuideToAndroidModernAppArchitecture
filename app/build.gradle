@@ -38,7 +38,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion '1.2.0-alpha08'
     }
     packagingOptions {
         resources {
@@ -85,5 +85,8 @@ dependencies {
 
     debugImplementation "androidx.compose.ui:ui-tooling:1.1.1"
     implementation "androidx.compose.ui:ui-tooling-preview:1.1.1"
+
+    /// Glide
+    implementation "com.github.skydoves:landscapist-glide:1.5.3"
 
 }

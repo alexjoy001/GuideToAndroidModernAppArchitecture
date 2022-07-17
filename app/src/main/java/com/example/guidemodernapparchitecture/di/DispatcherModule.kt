@@ -1,4 +1,4 @@
-package com.example.officedemo.di
+package com.example.guidemodernapparchitecture.di
 
 import dagger.Module
 import dagger.Provides
