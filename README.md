@@ -17,3 +17,6 @@ Clone the repository:
 
 git clone git@github.com:alexjoy001/GuideToAndroidModernAppArchitecture.git
 
+# License
+The project uses MIT License. Please check the [LICENSE.md](https://github.com/alexjoy001/GuideToAndroidModernAppArchitecture/blob/master/LICENSE.md) for more details.
+
